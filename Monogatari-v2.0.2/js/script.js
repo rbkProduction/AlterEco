@@ -78,7 +78,7 @@ monogatari.action ('message').messages ({
 	},
 	'shopping': {
 		title: 'Procures-toi des pièces uniques',
-		body: 'Si tu cherches à te procurer des pièces uniques tout en soutenant les commerces locaux, tu peux privilégier des établissements comme <a href= "https://www.aokas.ch/" target="_blank">Aokas</a>,<a href="https://deuxiemevie.ch/" target="_blank">Deuxième vie</a>, ou encore <a href="https://www.freitag.ch/fr" target="_blank">Freitag</a> qui soutiennent de belles causes, tout en offrant des designs que tu ne trouveras nul part ailleurs.',
+		body: 'Si tu cherches à te procurer des pièces uniques tout en soutenant les commerces locaux, tu peux privilégier des établissements comme <a href= "https://www.aokas.ch/" target="_blank">Aokas</a>,<a href="https://deuxiemevie.ch/" target="_blank"> Deuxième vie</a>, ou encore <a href="https://www.freitag.ch/fr" target="_blank">Freitag</a> qui soutiennent de belles causes, tout en offrant des designs que tu ne trouveras nul part ailleurs.',
 	},
 	'potager': {
 		title: 'Potager commun',
@@ -185,8 +185,7 @@ monogatari.script ({
 				'Warning': 'Tu dois bien avoir un prénom tout de même !'
 			}
 		},
-		'a Salut {{player.name}}. Je te souhaite la bienvenue dans cette expérience Alter\'Eco !',
-		'(Cliques pour passer à la suite.)',
+		'a Salut {{player.name}}. Je te souhaite la bienvenue dans cette expérience Alter\'Eco ! (Cliques pour passer à la suite.)',
 		{
 			'Choice': {
 				'Dialog': 'a Es-tu prêt à garder l\'esprit ouvert quant aux alternatives écologiques qui te seront présentées ?',
@@ -230,11 +229,11 @@ monogatari.script ({
 					},
 					'500 grammes': {
 						'Text': '500 grammes',
+						'Do':'jump rightAnswer1',
 						'onChosen': function(){
 							monogatari.storage().stats.point += 1;
 							return true;
 						},
-						'Do':'jump rightAnswer1',
 					},
 					'5000 grammes': {
 						'Text': '5000 grammes',
@@ -275,11 +274,11 @@ monogatari.script ({
 					},
 					'1,7 milliards de tonnes': {
 						'Text': '1,7 milliards de tonnes',
+						'Do': 'jump rightAnswer2',
 						'onChosen': function(){
 							monogatari.storage().stats.point += 1;
 							return true;
 						},
-						'Do': 'jump rightAnswer2',
 					},
 				},
 			},
@@ -307,11 +306,11 @@ monogatari.script ({
 					'Dialog': 'a Quel est le pourcentage d\'étudiants qui se rendent à vélo sur leur lieu d\'étude (apprentis et étudiants de 15 ans et plus) en Suisse en 2020 ?',
 					'8%': {
 						'Text': '8%',
+						'Do': 'jump rightAnswer3',
 						'onChosen': function(){
 							monogatari.storage().stats.point += 1;
 							return true;
 						},
-						'Do': 'jump rightAnswer3',
 					},
 					'12%': {
 						'Text': '12%',
@@ -351,11 +350,11 @@ monogatari.script ({
 					},
 					'2,8 millions': {
 						'Text': '2,8 millions de tonnes',
+						'Do': 'jump rightAnswer4',
 						'onChosen': function(){
 							monogatari.storage().stats.point += 1;
 							return true;
 						},
-						'Do': 'jump rightAnswer4',
 					},
 					'2,8 milliards': {
 						'Text': '2,8 milliards de tonnes',
@@ -386,11 +385,11 @@ monogatari.script ({
 					'Dialog': 'a Une quantité collosale de plastique est utilisée dans l\'emballage des fruits et légumes aux supermarchés. À combien s\'élève cette valeur ?',
 					'44%': {
 						'Text': '44%',
+						'Do': 'jump rightAnswer5',
 						'onChosen': function(){
 							monogatari.storage().stats.point += 1;
 							return true;
 						},
-						'Do': 'jump rightAnswer5',
 					},
 					'32%': {
 						'Text': '32%',
@@ -450,28 +449,48 @@ monogatari.script ({
 						'Text': 'Si tu fais beaucoup de recherches sur le Web...',
 						'Do': 'show message ecosia',
 					},
+				},
+			},
+			{
+				'Choice': {
 					'happyTurtle': {
 						'Text': 'Si tu souhaites aider les tortues...',
 						'Do': 'show message happyTurtle',
 					},
+				},
+			},
+			{
+				'Choice': {
 					'vomFass': {
 						'Text': 'Si tu aimes soutenir les commerces locaux...',
 						'Do': 'show message vomFass',
 					},
+				},
+			},
+			{
+				'Choice': {
 					'shopping': {
 						'Text': 'Si tu aimes te procurer des objets uniques...',
 						'Do': 'show message shopping',
 					},
+				},
+			},
+			{
+				'Choice': {
 					'potager': {
 						'Text': 'Si tu as la main verte...',
 						'Do': 'show message potager',
 					},
+				},
+			},
+			{
+				'Choice': {
 					'ending': {
 						'Text': 'Le mot de la fin',
 						'Do': 'jump ending',
 					},
-				}
-			}
+				},
+			},
 	],
 
 	'notJustYet': [
@@ -493,5 +512,6 @@ monogatari.script ({
 	'ending': [
 		'a Voilà, je pense que ces quelques minutes passées en ma compagnie ont permis de te rendre attentif sur les alternatives existantes pour développer des habitudes plus saines et écologiques.',
 		'a J\'espère que tu solliciteras les initiatives qui t\'ont été suggérées.',
+		'end',
 	],
 });
