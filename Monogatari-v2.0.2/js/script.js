@@ -92,7 +92,7 @@ monogatari.action ('canvas').objects ({
 
 });
 
-// Credits of the people involved in the creation of this awesome game
+// Credits of the people involved in the creation of this game
 monogatari.configuration ('credits', {
 	'Développement': {
 		'Équipe': [
@@ -148,6 +148,15 @@ monogatari.characters ({
 		name: 'Ta conscience...',
 		color: 'rgb(1, 179, 255)',
 		border: 'black',
+		sprites: {
+			angry: 'angry.png',
+			ashamed: 'ashamed.png',
+			bored: 'bored.png',
+			convinced: 'convinced.png',
+			doubting: 'doubting.png',
+			happy: 'happy.png',
+			surprised: 'surprised.png',
+		}
 	},
 	'b': {
 		name:'{{player.name}} (Toi)',

@@ -31,3 +31,4 @@ Toutes les musiques et bruits sonores sont issus de la bibliothèque audio de Yo
 
 ### Images
 Toutes les images ont été extraites de [Pexels](https://www.pexels.com/fr-fr/). 
+Les personnages sont issus de [Potat0Master](https://potat0master.itch.io/free-character-sprites-for-visual-novels-sensei-pack).
